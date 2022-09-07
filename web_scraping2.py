@@ -21,5 +21,17 @@ with open("index2.html", "r") as f:
 #tags = doc.find_all(["option"], text="Undergraduate", value = "undergraduate")
 #print(tags)
 
-tags = doc.find_all(class_="btn-item")
-print(tags)
+#tags = doc.find_all(class_="btn-item")
+#print(tags)
+
+
+
+#  **********   Regex:  **********
+
+tags = doc.find_all(text =re.compile("\$.*"))
+for tag in tags:
+    print(tag.strip())
+
+
+
+
