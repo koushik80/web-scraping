@@ -5,6 +5,8 @@ with open("index.html", "r") as f:
 
 # print(doc.prettify())
 
-tag = doc.title
-print(tag.string)
+#tag = doc.title
+tags = doc.find_all("p")
+#tag.string = "hello"
+print(tags)
 
