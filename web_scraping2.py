@@ -28,9 +28,16 @@ with open("index2.html", "r") as f:
 
 #  **********   Regex:  **********
 
-tags = doc.find_all(text =re.compile("\$.*"))
+#tags = doc.find_all(text =re.compile("\$.*"))
+#for tag in tags:
+    #print(tag.strip())
+
+tags = doc.find_all("input", type = "text")
 for tag in tags:
-    print(tag.strip())
+    tag['placeholder'] = "I'm loving it!"
+
+with open("changed.html", 'w') as file:
+    file.write(str(doc))
 
 
 
